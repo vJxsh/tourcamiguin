@@ -9,7 +9,7 @@ body {
   background: #f1f1f1;
 }
 
-/* HEADER */
+/* KATUNG HEADER */
 .site-header {
   background-color: #F0E2B6;
   color: black;
@@ -95,7 +95,7 @@ body {
   object-fit: cover;
 }
 
-/* CONTENT CARDS */
+/* CONTENT STYLES */
 .content-info {
   display: flex;
   gap: 15px;
