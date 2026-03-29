@@ -14,6 +14,7 @@ body {
     background: #f2f2f2;
 }
 
+/*HEADER PART*/
 .header-page {
     position: sticky;
     top: 0;
@@ -23,6 +24,7 @@ body {
     background-color: orange;
     padding: 8px 40px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    z-index: 2;
 }
 
 .header-left {
@@ -48,7 +50,7 @@ body {
 .nav-links a {
     font-weight: 500;
     font-size: 22px;
-    border-radius: 20px;
+    border-radius: 12px;
     padding: 8px 8px;
     text-decoration: none;
     color: black;
@@ -56,20 +58,37 @@ body {
 }
 
 .nav-links a:hover {
-    background-color: #e69500;
+    background-color: green;
 }
 
+
 .heropic {
+    z-index: 3;
     position: relative;
+    overflow: hidden;
 }
 
 .heropic img {
     width: 100%;
-    height: 90vh;
+    height: 95vh;
     object-fit: cover;
+    animation: zoomIn 12s ease-in-out infinite alternate;
 }
 
+/*para sa katung choy nga zoom in epek credit kang louie kay choy iya hero img*/
+@keyframes zoomIn {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.15);
+    }
+}
+
+
+
 .hero-content {
+    z-index: 3;
     position: absolute;
     top: 40%;
     left: 50%;
@@ -107,7 +126,7 @@ body {
 }
 
 .about-part {
-    margin-top: 100px;
+    margin-top: 120px;
     max-width: 900px;
     padding: 40px;
     text-align: center;
@@ -183,10 +202,12 @@ body {
 }
 
 .content-card {
+    z-index: 0;
     margin-top: 12px;
     margin-bottom: 12px;
     gap: 25px;
     width: 900px;
+    max-width: 80%;
     background: white;
     border-radius: 16px;
     padding: 20px;
@@ -209,7 +230,7 @@ body {
 .content-card img {
     width: 300px;
     height: 200px;
-    object-fit: cover;
+    object-fit: fill;
     border-radius: 12px;
 }
 
@@ -224,19 +245,39 @@ body {
     font-size: 16px;
 }
 
+
 @media(max-width:768px){
 	.header-page{
         display: flex;
         flex-direction: column;
+        z-index: 4;
+        
     }
-
-    .nav-links a{
-        font-size: 1rem;
-    }
-
     .content-card{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content-card h2{
+        text-align: center;
+    }
+    
+    .content-card a{
+        justify-content: center;
+        align-items: center;
         display: flex;
         flex-direction: column;
-        width: 80%;
     }
+
+    .content-card img{
+        min-width: 80%;
+    }
+
+    .nav-links{
+        gap: 50px;
+    }
+    .nav-links a{
+        font-size: 24px;
+    }
+
 }
